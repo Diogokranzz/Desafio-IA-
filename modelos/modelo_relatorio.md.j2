@@ -1,0 +1,22 @@
+# Relatório rápido de SRAG
+
+Gerado em: {{ generated_at }}
+
+## Indicadores
+- Casos (últimos 7 dias): {{ metrics.last7_cases }}
+- Casos (7 dias anteriores): {{ metrics.prev7_cases }}
+- Variação de casos: {{ (metrics.case_increase_rate * 100) | round(2) }}%
+- Mortalidade (30 dias): {{ (metrics.mortality_rate_30d * 100) | round(2) }}%
+- UTI (30 dias): {{ (metrics.icu_rate_30d * 100) | round(2) }}%
+- Vacinação (proxy nos casos): {{ (metrics.vaccination_rate * 100) | round(2) }}%
+
+## Resumo
+{{ narrative }}
+
+## Gráficos
+{% for c in charts %}
+![Gráfico]({{ c }})
+{% endfor %}
+
+## Fontes
+- {{ data_source }} – [{{ data_url }}]({{ data_url }})

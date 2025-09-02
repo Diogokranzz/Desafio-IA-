@@ -1,0 +1,19 @@
+# virtualenv
+.venv/
+
+# python cache
+__pycache__/
+*.pyc
+
+# editor
+.vscode/
+
+# env
+.env
+
+# backups/arquivos temporários
+scripts/backup_before_strip_disabled/
+
+# system
+.DS_Store
+Thumbs.db
