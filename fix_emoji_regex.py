@@ -24,7 +24,6 @@ def corrigir_bloco_em_arquivo(caminho):
         if "emoji_pattern = re.compile" in conteudo and (
             "\\U" in conteudo or "\\u" in conteudo or r"\U" in conteudo
         ):
-
             # Aplica substituição *cega* entre a linha que começa com "emoji_pattern = re.compile"
             # e a linha que contém "flags=re.UNICODE"
             linhas = conteudo.splitlines()
