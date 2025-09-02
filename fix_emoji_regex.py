@@ -36,7 +36,7 @@ def corrigir_bloco_em_arquivo(caminho):
 
             if inicio is not None and fim is not None:
                 print(f"[Corrigido] {caminho}")
-                novas_linhas = linhas[:inicio] + [l for l in NOVO_PADRAO.splitlines()] + linhas[fim + 1:]
+                novas_linhas = linhas[:inicio] + [linha_nova for linha_nova in NOVO_PADRAO.splitlines()] + linhas[fim + 1:]
                 with open(caminho, "w", encoding="utf-8") as f:
                     f.write("\n".join(novas_linhas) + "\n")
             else:
